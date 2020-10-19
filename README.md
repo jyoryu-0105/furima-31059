@@ -25,9 +25,9 @@
 | name                | string     | null:false                     |
 | category_id         | integer    | null:false                     |
 | price               | integer    | null:false                     |
-| status              | string     | null:false                     |
+| status_id           | integer    | null:false                     |
 | shipping_cost_id    | integer    | null:false                     |
-| shipping_address_id | integer    | null:false                     |
+| prefecture_id       | integer    | null:false                     |
 | shipping_date_id    | integer    | null:false                     |
 | details             | text       | null:false                     |
 | user                | references | null: false, foreign_key: true |
@@ -43,7 +43,6 @@
 |:----------------------|-----------:|:------------------------------:|
 | user                  | references | null: false, foreign_key: true |
 | item                  | references | null: false, foreign_key: true |
-| address               | references | null: false, foreign_key: true |
 
 ### Association
 
