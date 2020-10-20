@@ -79,11 +79,16 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("First name can't be blank")
     end
 
-    it 'ユーザー本名は、全角（漢字・ひらがな・カタカナ）でないと登録できない' do
+    it 'ユーザー本名（名前）は、全角（漢字・ひらがな・カタカナ）でないと登録できない' do
       @user.first_name = Faker::Name.initials(number: 2)
+      @user.valid?
+      expect(@user.errors.full_messages).to include('First name は全角文字を使用してください')
+    end
+
+    it 'ユーザー本名（名字）は、全角（漢字・ひらがな・カタカナ）でないと登録できない' do
       @user.last_name = Faker::Name.initials(number: 2)
       @user.valid?
-      expect(@user.errors.full_messages).to include('First name は全角文字を使用してください', 'Last name は全角文字を使用してください')
+      expect(@user.errors.full_messages).to include('Last name は全角文字を使用してください')
     end
 
     it 'ユーザー本名のフリガナは、名字が空では登録できない' do
@@ -98,11 +103,16 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("First name kana can't be blank")
     end
 
-    it 'ユーザー本名のフリガナは、全角（カタカナ）でないと登録できない' do
+    it 'ユーザー本名のフリガナ（名前）は、全角（カタカナ）でないと登録できない' do
       @user.first_name_kana = Gimei.name.first.kanji
+      @user.valid?
+      expect(@user.errors.full_messages).to include('First name kana は全角カタカナを使用してください')
+    end
+
+    it 'ユーザー本名のフリガナ（名字）は、全角（カタカナ）でないと登録できない' do
       @user.last_name_kana = Gimei.name.last.kanji
       @user.valid?
-      expect(@user.errors.full_messages).to include('First name kana は全角カタカナを使用してください', 'Last name kana は全角カタカナを使用してください')
+      expect(@user.errors.full_messages).to include('Last name kana は全角カタカナを使用してください')
     end
 
     it '生年月日が空では登録できない' do
