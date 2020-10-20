@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   validates :image, :name, :details, :category, :status, :shipping_cost, :shipping_date, :prefecture, presence: true
-  validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than: 10,000,000}
+  validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than: 10000000 }
   validates :category_id, :status_id, :shipping_cost_id, :shipping_date_id, :prefecture_id, numericality: { other_than: 1 }
 
 end
