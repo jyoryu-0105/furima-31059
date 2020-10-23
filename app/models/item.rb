@@ -8,6 +8,7 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image
+  has_one    :purchase
 
   validates :image, :name, :details, :category, :status, :shipping_cost, :shipping_date, :prefecture, presence: true
   validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than: 10_000_000 }
