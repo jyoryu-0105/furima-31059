@@ -1,6 +1,5 @@
 class UserPurchase
-
-  include ActiveModel::ActiveModel
+  include ActiveModel::Model
   attr_accessor :token, :item_id, :user_id,:postal_code, :prefecture_id, :city, :house_number, :building, :phone_number
 
   with_options presence: true do
