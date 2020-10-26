@@ -2,6 +2,7 @@ class PurchasesController < ApplicationController
   before_action :authenticate_user!
   before_action :move_to_index
   before_action :set_item
+  before_action :sold_out
   
   def index
     @purchase = UserPurchase.new
@@ -38,5 +39,9 @@ class PurchasesController < ApplicationController
 
   def move_to_index
     redirect_to root_path if current_user.id == Item.find(params[:item_id]).user.id
+  end
+
+  def sold_out
+    redirect_to root_path if Purchase.exists?(item_id: params[:item_id])
   end
 end
