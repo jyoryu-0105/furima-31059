@@ -10,6 +10,11 @@ RSpec.describe UserPurchase, type: :model do
       expect(@purchase).to be_valid
     end
 
+    it '建物名が空欄でも登録できる' do
+      @purchase.building = nil
+      expect(@purchase).to be_valid
+    end
+
     it 'クレジットカード情報は必須であり、正しいクレジットカードの情報で無いときは決済できないこと' do
       @purchase.token = nil
       @purchase.valid?
