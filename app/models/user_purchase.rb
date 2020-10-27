@@ -8,7 +8,7 @@ class UserPurchase
     validates :token
     validates :prefecture_id, numericality: { other_than: 1 }
     validates :postal_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
-    validates :phone_number, format: { with: /0\d{10}/, message: "is invalid. NO hyphen(-)"}
+    validates :phone_number, format: { with: /\A0\d{9,10}\z/, message: "is invalid. NO hyphen(-)"}
   end
 
   def save
