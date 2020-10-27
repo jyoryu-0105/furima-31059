@@ -6,6 +6,6 @@ FactoryBot.define do
     city                { Gimei.city.kanji }
     house_number        { Gimei.town.kanji }
     building            { Gimei.town.kanji }
-    phone_number        { Faker::Number.leading_zero_number(digits: 10)}
+    phone_number        { Faker::Number.leading_zero_number(digits: 10) }
   end
 end
