@@ -1,7 +1,7 @@
 class PurchasesController < ApplicationController
   before_action :authenticate_user!
-  before_action :move_to_index
   before_action :set_item
+  before_action :move_to_index
   before_action :sold_out
 
   def index
@@ -32,14 +32,14 @@ class PurchasesController < ApplicationController
   def pay_item
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
-      amount: Item.find(params[:item_id]).price,
+      amount: @item.price,
       card: purchase_params[:token],
       currency: 'jpy'
     )
   end
 
   def move_to_index
-    redirect_to root_path if current_user.id == Item.find(params[:item_id]).user.id
+    redirect_to root_path if current_user.id == @item.user.id
   end
 
   def sold_out
