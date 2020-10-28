@@ -6,9 +6,9 @@ class UserPurchase
     validates :city
     validates :house_number
     validates :token
-    validates :prefecture_id, numericality: { other_than: 1 }
-    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'is invalid. Include hyphen(-)' }
-    validates :phone_number, format: { with: /\A0\d{9,10}\z/, message: 'is invalid. NO hyphen(-)' }
+    validates :prefecture_id, numericality: { other_than: 1 ,message: 'を選択してください'}
+    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'はハイフンを含め、7桁の数字で入力してください' }
+    validates :phone_number, format: { with: /\A0\d{9,10}\z/, message: 'はハイフンを含めず入力してください' }
   end
 
   def save
