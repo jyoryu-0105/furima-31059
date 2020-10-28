@@ -1,0 +1,25 @@
+ja:
+  activerecord:
+    models:
+      item: 商品
+    attributes:
+      item:
+        image: 商品の画像
+        name: 商品名
+        category_id: カテゴリー
+        price: 価格
+        status_id: 商品の状態
+        shipping_cost_id: 配送料の負担
+        prefecture_id: 発送元の地域
+        shipping_date_id: 発送までの日数
+        details: 商品の説明
+  activemodel:
+    attributes:
+      user_purchase:
+        city: 市区町村
+        postal_code: 郵便番号
+        phone_number: 電話番号
+        prefecture_id: 都道府県
+        house_number: 番地
+        building: 建物名
+        token: クレジットカードの情報
