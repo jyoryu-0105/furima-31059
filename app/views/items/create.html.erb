@@ -1,0 +1,13 @@
+<%= render partial: "header" %>
+  <div class="contents row">
+    <div class="success">
+      <h3>商品の出品が完了しました。</h3>
+      <div class="btn">
+        <%= link_to 'トップページへ戻る', root_path %>
+      </div>
+      <div class="btn">
+        <%= link_to '出品した商品を見る', item_path(@item) %>
+      </div>
+    </div>
+  </div>
+<%= render partial: "footer" %>

@@ -1,0 +1,13 @@
+<%= render partial: "items/header" %>
+  <div class="contents row">
+    <div class="success">
+      <h3>商品の購入が完了しました。</h3>
+      <div class="btn">
+        <%= link_to 'トップページへ戻る', root_path %>
+      </div>
+      <div class="btn">
+        <%= link_to '購入した商品を見る', item_path(@item) %>
+      </div>
+    </div>
+  </div>
+<%= render partial: "items/footer" %>
