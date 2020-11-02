@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user
-    @items = @user.items.order('created_at DESC')
   end
 
   def show

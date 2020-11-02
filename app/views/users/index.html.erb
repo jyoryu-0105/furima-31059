@@ -1,53 +1,10 @@
 <%= render partial: "items/header" %>
-<div class="main">
-  <div class="inner">
-    <div class="user__wrapper">
-      <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの情報"%>
-      </h2>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th class="table__col1">名前</th>
-            <td class="table__col2"><%= @user.nickname %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">プロフィール</th>
-            <td class="table__col2"><%= @user.nickname %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">所属</th>
-            <td class="table__col2"><%= @user.nickname %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">役職</th>
-            <td class="table__col2"><%= @user.nickname %></td>
-          </tr>
-        </tbody>
-      </table>
-      <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの出品した商品一覧"%>
-      </h2>
-      <div class="user__card">
-      <ul class='item-lists'>
-      <% if @items.exists?%> 
-        <%= render partial: "items/item", collection: @items %>
-      <% else %>
-      <li class='list'>
-      <div class='item-img-content'>
-        <%= link_to root_path do %>
-        <%= image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "item-img" %>
-      </div>
-        <div class='item-info'>
-          <h3 class='no-item-name'>
-            商品はありません
-          </h3>
-        </div>
-        <% end %>
-      <% end %>
-      </li>
-      </ul>
-      </div>
+<div class="main-contents">
+  <div class="wrapper">
+    <div class="side-bar">
+      <%= render "side_bar" %>
+    </div>
+    <div class= "user-wrapper">
     </div>
   </div>
 </div>
