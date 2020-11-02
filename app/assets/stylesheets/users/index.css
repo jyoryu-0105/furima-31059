@@ -44,6 +44,11 @@
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 40px;
+  background-color: honeydew;
+}
+
+.mypage-tab{
+  background-color: honeydew;
 }
 
 .mypage-tabs>li{
@@ -54,9 +59,11 @@
 }
 
 .tab-content{
-  display: flex;
+  height: calc(1020px - 790px);
+  display: block;
   align-items: center;
   text-align: center;
+  background-color: hotpink;
 }
 .side-bar {
   width: 300px;
