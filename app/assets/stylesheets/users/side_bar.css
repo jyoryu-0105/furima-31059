@@ -3,12 +3,10 @@ a {
   color: #333;
 }
 
-ul {
-  display: block;
-}
 
 .mypage-nav-list {
   font-weight: 600;
+  display: block;
 }
 
 .mypage-nav-list-item {
