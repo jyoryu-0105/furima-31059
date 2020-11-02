@@ -1,4 +1,4 @@
-function hover() {
+function links() {
   const link = document.getElementById("lists")
   
   link.addEventListener('mouseover', function(){
@@ -10,4 +10,4 @@ function hover() {
   })
 }
 
-window.addEventListener('load', hover)
+window.addEventListener('load', links)
