@@ -1,0 +1,40 @@
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+
+.mypage-nav-list {
+  font-weight: 600;
+  display: block;
+}
+
+.mypage-nav-list-item {
+  position: relative;
+  display: block;
+  min-height: 48px;
+  padding: 16px;
+  background: #fff;
+  font-size: 14px;
+  color: #333;
+  border: 1px solid  #f5f5f5;;
+}
+
+.mypage-nav-list-item>p{
+  display: inline;
+  position: absolute;
+  top: 5px;
+  right: 16px;
+  font-size: 25px;
+  font-weight: 100;
+  color: #dfdede;
+}
+
+.mypage-nav-head {
+  margin: 40px 0 0;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px;
+  color: #333;
+}
+
